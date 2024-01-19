@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8" />
     <title>Spa Menu</title>
-    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link href="../static/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
 </head>
 <body>
 <h1>My Super Fancy Spa</h1>
+
 <div id = "clientProfile">
+    <h2>My profile</h2>
+    <p th:text="${name}">Name: Default</p>
+    <p th:text="${skintype}">Skin Type: Default</p>
+    <p th:text="${manipedi}">Mani/Pedi: Default</p>
 </div>
 <div id = "servicesMenu">
+    <h1>Menu of available services</h1>
+  <th:block
+    th:each="appropriateFacials : ${facials}">
+     <td th:text="${appropriateFacials}">Test</td>
+ </th:block>
+
 </div>
 </body>
 </html>
